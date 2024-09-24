@@ -7,7 +7,7 @@ const PORT  = process.env.PORT;
 
 //setting view engine
 app.set("view engine",'ejs');
-app.set("views",path.resolve("./views"));
+app.set("views",path.resolve(__dirname,"views"));
 
 //setting path
 app.get('/', (req,res)=>{

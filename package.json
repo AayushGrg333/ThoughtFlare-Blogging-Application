@@ -4,8 +4,8 @@
   "description": "<h1>Blogging Application</h1>\r <p>Blogging application using Node.js, MongoDB, Express.js</p>",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev" : "nodemon index.js"
+    "start": "node src/index.js",
+    "dev" : "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
