@@ -14,14 +14,22 @@ router.get('/signup',(req,res)=>{
 
 router.post('/signup',async (req,res)=> {
     const {fullName, email ,password} = req.body;
-    console.log(req.body)
     await User.create({
         fullName,
         email,
         password,
     });
     return res.redirect("/")
+});
+
+router.post('/signin',async(req,res)=>{
+    const {email ,password} = req.body;
+    const user = await User.matchPassword(email,password);
+
+    console.log("user",user);
+    return res.redirect("/")
 })
+
 
 
 

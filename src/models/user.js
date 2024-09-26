@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const { error } = require("node:console");
 const { createHmac, randomBytes } = require("node:crypto");
 
 // making structure
@@ -49,6 +50,22 @@ UserSchema.pre("save", function (next) {
 
     next();
 });
+
+UserSchema.static('matchPassword',async function(email,password){
+    const user = await this.findOne({email});
+    if(!user) throw new Error("user not found");
+
+    const salt = user.salt
+    const userProvideHash = createHmac("sha256", salt)
+    .update(password)
+    .digest("hex");
+
+    if(userProvideHash === user.password){
+        return user;
+    }else{
+        throw new Error("incorrect password");
+    }
+})
 
 const User = model("user", UserSchema);
 
