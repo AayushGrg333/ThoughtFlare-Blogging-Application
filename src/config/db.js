@@ -1,5 +1,7 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
-const url = "mongodb://127.0.0.1:27017/ThoughtFlare";
+
+const url = process.env.mongourl;
 
 
 async function mongoConnect() {
