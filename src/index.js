@@ -7,6 +7,8 @@ const {checkForAuthenticaitonCookie} = require("./middlewares/authentication")
 // router register
 const mongoConnect =  require('./config/db')
 const userRoute = require("./routes/user")
+const blogRoute = require("./routes/blog")
+const Blog = require('./models/blog')
 
 const app = express();
 const PORT  = process.env.PORT;
@@ -25,13 +27,16 @@ app.set("view engine",'ejs');
 app.set("views",path.resolve(__dirname,"views"));
 
 //setting path
-app.get('/', (req,res)=>{
+app.get('/', async (req,res)=>{
+    const allBlogs = await Blog.find().sort({ createdAt: -1 });
     res.render('home',{
-        user:req.user
+        user:req.user,
+        blogs: allBlogs
     });
 })
 
 app.use("/user",userRoute);
+app.use("/blog",blogRoute);
 
 //starting server
 app.listen(PORT, ()=> console.log(`Server has been started Port:${PORT}`))
