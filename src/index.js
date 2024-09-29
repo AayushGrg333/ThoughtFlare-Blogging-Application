@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(checkForAuthenticaitonCookie('token'))
+app.use(express.static(path.resolve(__dirname, "../public")));
 
 //connecting with mongodb
 mongoConnect()

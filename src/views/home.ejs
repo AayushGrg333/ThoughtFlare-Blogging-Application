@@ -9,7 +9,24 @@
 
 <body>
     <%- include('./partials/nav') %>
-    <%= JSON.stringify(blogs) %>
+
+    <div class="container mt-3">
+        <div class="row">
+            <% blogs.forEach(blog => { %>
+                <div class="col-md-4"> <!-- Adjust the size of the column -->
+                    <div class="card" style="width: 100%;"> <!-- Make card take full column width -->
+                        <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="Cover Image">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    
+
     <%- include('./partials/scripts') %>
 </body>
 
