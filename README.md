@@ -17,8 +17,6 @@ A blogging application built with **Node.js**, **Express.js**, **MongoDB**, and 
 ## Features
 - User authentication (register, login)
 - Create, edit, and delete blog posts
-- Comment on posts
-- Responsive design for mobile and desktop
 
 ## Technologies Used
 - **Node.js**: JavaScript runtime for building server-side applications.
