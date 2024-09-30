@@ -10,12 +10,12 @@
 <body>
     <%- include('./partials/nav') %>
 
-    <div class="container mt-3">
-        <div class="row">
+    <div class="container mt-3 ">
+        <div class="row row row-cols-4">
             <% blogs.forEach(blog => { %>
-                <div class="col-md-4"> <!-- Adjust the size of the column -->
-                    <div class="card" style="width: 100%;"> <!-- Make card take full column width -->
-                        <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="Cover Image">
+                <div class="col"> 
+                    <div class="card" style="width: 100%;"> 
+                        <img src="<%= blog.coverImageURL %>" width="300px" class="card-img-top" alt="Cover Image">
                         <div class="card-body">
                             <h5 class="card-title"><%= blog.title %></h5>
                             <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More...</a>
