@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- imports the code from head.ejs -->
+    <%- include('./partials/head') %>
+        <title>Blog Page</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-4">
+        <h1><%= blog.title %></h1>
+        <img src="<%= blog.coverImageURL %>" width="700px">
+        <p><%= blog.body %></p>
+    </div>
+
+    <%- include('./partials/scripts') %>
+</body>
+
+</html>
