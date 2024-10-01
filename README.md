@@ -70,16 +70,16 @@ Let me know if you need anything else!
 Here are some of the key API endpoints available in the application:
 
 - **Get all posts**
-  - `GET /api/posts`
+  - `GET /`
 
 - **Create a new post**
-  - `POST /api/posts`
+  - `POST /blog/add-new`
 
 - **Get a specific post**
-  - `GET /api/posts/:id`
+  - `GET /blog/:id`
 
 - **Update a specific post**
-  - `PUT /api/posts/:id`
+  - `PUT /posts/:id`
 
 - **Delete a specific post**
   - `DELETE /api/posts/:id`
