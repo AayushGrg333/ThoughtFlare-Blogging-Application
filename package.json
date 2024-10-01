@@ -2,10 +2,10 @@
   "name": "blogging-application",
   "version": "1.0.0",
   "description": "<h1>Blogging Application</h1>\r <p>Blogging application using Node.js, MongoDB, Express.js</p>",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
